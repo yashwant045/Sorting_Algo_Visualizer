@@ -293,12 +293,22 @@ async function merge(bars, l, m, r) {
 }
 
 function swap(el1, el2) {
+    el1.style.transform = "scale(1.05)";
+    el2.style.transform = "scale(1.05)";
+
     let tempHeight = el1.style.height;
     let tempText = el1.innerText;
+
     el1.style.height = el2.style.height;
     el1.innerText = el2.innerText;
+
     el2.style.height = tempHeight;
     el2.innerText = tempText;
+
+    setTimeout(() => {
+        el1.style.transform = "scale(1)";
+        el2.style.transform = "scale(1)";
+    }, animationSpeed);
 }
 
 // Init
