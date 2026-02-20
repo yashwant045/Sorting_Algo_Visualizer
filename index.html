@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualiser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sorting Algorithm Visualiser</h1>
+        <p>“Let’s go to visualise”</p>
+        
+        <div class="algo-selection">
+            <button class="algo-btn" onclick="setAlgo('bubble')">Bubble Sort</button>
+            <button class="algo-btn" onclick="setAlgo('insertion')">Insertion Sort</button>
+            <button class="algo-btn" onclick="setAlgo('selection')">Selection Sort</button>
+            <button class="algo-btn" onclick="setAlgo('merge')">Merge Sort</button>
+            <button class="algo-btn" onclick="setAlgo('quick')">Quick Sort</button>
+        </div>
+
+        <div class="controls">
+    <div class="control-group">
+        <h3>Input</h3>
+        <div class="input-wrapper">
+            <input type="text" id="userNumbers" placeholder="e.g. 50, 120, 30">
+            <button onclick="generateCustomBars()">Set</button>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="control-group">
+        <h3>Count</h3>
+        <input type="range" id="sizeSlider" min="5" max="60" value="30" oninput="updateSlider()">
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="control-group">
+        <h3>Speed (Delay)</h3>
+        <input type="range" id="speedSlider" min="5" max="500" value="50" oninput="updateSpeed()">
+    </div>
+    
+    <div class="btn-group">
+        <button id="startBtn" class="start-btn" onclick="startSorting()">Select Algo</button>
+        <button id="resetBtn" class="reset-btn" onclick="resetVisualizer()">Reset</button>
+    </div>
+</div>
+    </header>
+
+    <main id="container"></main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* Variables for easy color management */
+:root {
+    --bg-color: #f0e68c;      /* Pale Yellow */
+    --bar-color: #000000;     /* Black */
+    --comparing: #e74c3c;     /* Red */
+    --sorted: #2ecc71;        /* Green */
+    --selected: #0000ff;      /* Blue */
+    --header-bg: #2c3e50;     /* Dark Header */
+    --text-white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--header-bg);
+    color: var(--text-white);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+h1 { margin: 0; font-size: 1.8rem; }
+p { margin: 5px 0 20px; font-style: italic; opacity: 0.8; }
+
+/* Algorithm Buttons */
+.algo-selection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.algo-btn {
+    padding: 10px 20px;
+    background: #34495e;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.algo-btn:hover { background: #46627f; }
+.algo-btn.active { background: #3498db; transform: scale(1.05); }
+
+/* Controls Section */
+.controls {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-group h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    width: 200px;
+}
+
+.divider {
+    width: 1px;
+    height: 50px;
+    background: #bdc3c7;
+    margin: 0 10px;
+}
+
+.start-btn {
+    background-color: var(--sorted);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: not-allowed;
+    opacity: 0.6;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.start-btn.ready {
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* --- VISUALIZATION CONTAINER --- */
+#container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Hang bars from the TOP */
+    padding: 20px;
+    gap: 4px; /* Spacing between bars */
+    height: 60vh;
+}
+/* New Reset Button Styling */
+.reset-btn {
+    background-color: #e74c3c; /* Red */
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: background 0.2s;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
+}
+
+.btn-group {
+    display: flex;
+    gap: 5px;
+}
+
+/* Update slider styling for better visibility */
+input[type=range] {
+    cursor: pointer;
+}
+.bar {
+    background-color: var(--bar-color);
+    width: 20px; /* Default width, logic adjusts this based on count */
+    transition: height 0.2s ease, background-color 0.1s ease;
+    border-radius: 0 0 4px 4px;
+    
+    /* Display value inside bar if it's wide enough */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 10px;
+    padding-bottom: 5px;
+}
